@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnesh Batra | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link active" onclick="showTab('home')">Home</a></li>
+        <li><a href="#publications" class="nav-link" onclick="showTab('publications')">Publications</a></li>
+        <li><a href="#projects" class="nav-link" onclick="showTab('projects')">Projects</a></li>
+        <li><a href="#experience" class="nav-link" onclick="showTab('experience')">Experience</a></li>
+        <li><a href="#contact" class="nav-link" onclick="showTab('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="pfp.jpeg" alt="Profile" class="profile-img">
+      <h1 style="font-size:1.35rem;">Arnesh Batra</h1>
+      <p class="subtitle" style="font-size:1.08rem;">B.Tech CSE & AI | IIITD</p>
+      <p class="slogan" style="font-size:1.08rem;">"I am Iron Man"</p>
+      <a href="Arnesh_CV.pdf" class="cv-btn" download style="font-size:1.08rem;">Download CV</a>
+      <div class="quick-info" style="font-size:1.08rem;">
+        <p>📍 Delhi, India</p>
+        <p>📧 <a href="mailto:arnesh23129@iiitd.ac.in">arnesh23129@iiitd.ac.in</a></p>
+        <div class="social-links">
+          <a href="https://github.com/arnesh2212" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/arnesh-batra-9684a4211" target="_blank">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=bngVIAEAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section id="home" class="tab-section">
+        <section id="about" class="card">
+          <h2 style="font-size:1.45rem; font-weight:900;">About Me</h2>
+          <p>I'm a passionate undergraduate researcher focused on <b>deep learning</b>, <b>medical imaging</b>, <b>genomics</b>, <b>multimodal LLMs</b>, and <b>adaptive learning systems</b>. I’ve led award-winning projects and authored publications at <b>INTERSPEECH’24</b>, <b>CVPR 2025</b>, and <b>ICMR 2025 Workshops</b>, with a NeurIPS submission under review. I build real-world AI tools that span from <b>DNA interaction models</b> to <b>neuro-adaptive education systems</b>.</p>
+          <ul style="margin:0 0 0 1.2em; padding:0; color:#fff; font-size:0.97rem;">
+            <li><b>Education:</b> B.Tech, Computer Science and Artificial Intelligence, IIIT Delhi (2023–2027), CGPA: 8.8/10.0</li>
+            <li><b>Research Experience:</b> Meta/Brown University (Self-supervised learning), UC San Diego (DNA-RNA models), IIITD SBI Lab (Medical Imaging), USC AI Institute (Video Watermarking), HMI Lab IIITD (Multimodal LLMs), Mythyverse (Sign Language AI)</li>
+            <li><b>Achievements:</b> 2nd Place, Smart India Hackathon 2024; 1st Place, Formula 1 Kaggle Datathon; 4th Place, IIT Jodhpur ML Hackathon; 5th Place, IIT Jammu Hackathon</li>
+          </ul>
+        </section>
+        <section class="card">
+          <h2 style="font-size:1.35rem; font-weight:900;">Current Research Topics</h2>
+          <div class="research-badges-row" style="display:flex; gap:1.1rem; flex-wrap:wrap; margin-top:0.7em;">
+            <span class="research-badge">Self-Supervised Learning</span>
+            <span class="research-badge">Audio</span>
+            <span class="research-badge">Representation Learning</span>
+            <span class="research-badge">Computer Vision</span>
+            <span class="research-badge">Medical Imaging</span>
+          </div>
+        </section>
+        <section id="por" class="card">
+          <h2 style="font-size:1.35rem; font-weight:900;">Positions of Responsibility</h2>
+          <div class="projects-list" style="display:flex; flex-wrap:wrap; gap:1.2rem;">
+            <div class="por-card project-restore">
+              <div class="por-title" style="font-weight:800; font-size:1.08rem;">AI/ML Lead, CYBORG Club, IIITD</div>
+              <div class="por-desc" style="margin-top:0.3em;">Taught 40+ students to build neural nets from scratch (Dec 2023 – Present)</div>
+            </div>
+            <div class="por-card project-restore">
+              <div class="por-title" style="font-weight:800; font-size:1.08rem;">Astrophotography Lead, Astronuts</div>
+              <div class="por-desc" style="margin-top:0.3em;">Chandrayaan landing event, star-gazing sessions (Jan 2025 – Present)</div>
+            </div>
+            <div class="por-card project-restore">
+              <div class="por-title" style="font-weight:800; font-size:1.08rem;">Founder, StarkVision</div>
+              <div class="por-desc" style="margin-top:0.3em;">Led 20+ member research community, projects at CVPR, ICMR, NeurIPS (May 2025 – Present)</div>
+            </div>
+          </div>
+          <div style="margin-top:2rem; color:#8fa1c7; font-size:1rem;">
+            <b>Achievements:</b><br>
+            🥈 2nd Place, Smart India Hackathon 2024 Grand Finals (IIT Kharagpur)<br>
+            🥇 1st Place, Formula 1 Kaggle Datathon (<a href="https://github.com/arnesh2212/f1analyze" target="_blank">F1nalyze</a>)<br>
+            🏅 4th Place, IIT Jodhpur ML Hackathon<br>
+            🏅 5th Place, IIT Jammu Hackathon ("FILL THE VOID()")
+          </div>
+        </section>
+        <section id="skills" class="card" style="margin-top:2.2rem; padding:0.7rem 0.8rem 0.6rem 0.8rem;">
+          <h2 style="font-size:1.1rem; font-weight:800; margin-bottom:0.7em;">Skills</h2>
+          <div class="skills-widgets" style="gap:0.3rem;">
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">Python</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">C++</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">Java</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">HTML</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">CSS</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">JavaScript</div>
+            <div class="code-widget" style="font-size:0.92rem; padding:0.22rem 0.7rem;">Lua</div>
+          </div>
+          <div class="skills-details" style="font-size:0.98rem; margin-top:0.5em;">
+            <b>Frameworks:</b> PyTorch, TensorFlow, Hugging Face, Scikit-learn, LibGDX<br>
+            <b>Tools:</b> Git, Docker, Linux, Vim, Jupyter, Kaggle, Overleaf<br>
+            <b>Domains:</b> LLMs, NLP, Vision, Medical Imaging, Genomics, Educational AI<br>
+            <b>Specialties:</b> Attention models, multimodal training, efficient inference, benchmark creation
+          </div>
+        </section>
+      </section>
+      <section id="publications" class="tab-section" style="display:none;">
+        <section class="card">
+          <h2 style="font-size:1.45rem; font-weight:900; color:#FFD600;">Publications</h2>
+          <div class="pubs-list">
+            <div class="pub-entry">
+              <div class="pub-title" style="font-size:1.15rem; color:#FFD600;">ASGIR: Audio Spectrogram-Guided Information Retrieval</div>
+              <div class="pub-meta"><b style="color:#FFD600;">INTERSPEECH 2024</b> &nbsp; | &nbsp; Dec 2023 – May 2024</div>
+              <div class="pub-desc" style="color:#fff;">First-authored a novel audio classification framework using spectrograms for enhanced bird sound recognition. Published at INTERSPEECH 2024, our work introduces a new methodology for information retrieval.</div>
+              <div class="pub-links">
+                <a href="https://www.isca-archive.org/interspeech_2024/chaudhuri24_interspeech.pdf" target="_blank">Isca Archive</a>
+              </div>
+            </div>
+            <div class="pub-entry">
+              <div class="pub-title" style="font-size:1.15rem; color:#FFD600;">MSCAN: A Multistage Cross-Attention Network for Spinal Stenosis Grading</div>
+              <div class="pub-meta"><b style="color:#FFD600;">CVPR 2025 Demo</b> &nbsp; | &nbsp; July 2024 – Aug 2024</div>
+              <div class="pub-desc" style="color:#fff;">Developed a multi-stage cross-attention network for automated spinal stenosis grading, achieving state-of-the-art performance (AUROC 0.971). Accepted as a demonstration at CVPR 2025.</div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2503.01634" target="_blank">arXiv</a>
+              </div>
+            </div>
+            <div class="pub-entry">
+              <div class="pub-title" style="font-size:1.15rem; color:#FFD600;">SocialDF: A Benchmark and Model for Deepfake Detection on Social Media</div>
+              <div class="pub-meta"><b style="color:#FFD600;">ICMR 2025 MAD Workshop</b> &nbsp; | &nbsp; Jan 2025 – Apr 2025</div>
+              <div class="pub-desc" style="color:#fff;">Constructed SocialDF, a benchmark dataset for social media deepfake detection, and designed a tailored detection model. The work was accepted at the ICMR MAD’25 workshop.</div>
+              <div class="pub-links">
+                <a href="https://dl.acm.org/doi/10.1145/3733567.3735573" target="_blank">ACM Digital Library</a>
+              </div>
+            </div>
+            <div class="pub-entry">
+              <div class="pub-title" style="font-size:1.15rem; color:#FFD600;">Melody or Machine: Benchmarking and Detecting Synthetic Music</div>
+              <div class="pub-meta"><b style="color:#FFD600;">Under Review - NeurIPS 2025</b> &nbsp; | &nbsp; 2025</div>
+              <div class="pub-desc" style="color:#fff;">First-authored a benchmark and detection model for synthetic music using cross-modal contrastive alignment. The manuscript is currently under review for NeurIPS 2025.</div>
+              <div class="pub-links">
+                <span style="color:#aaa;">Preprint coming soon</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="projects" class="tab-section" style="display:none;">
+        <section class="card">
+          <h2 style="font-size:1.45rem; font-weight:900;">Projects</h2>
+          <div class="projects-list" style="display:flex; flex-wrap:wrap; gap:1.2rem;">
+            <div class="project-card project-restore">
+              <b><a href="https://github.com/arnesh2212/FocusFlow" target="_blank">FocusFlow</a></b><br>
+              Adaptive learning for neurodiverse students. Attention tracking, Pomodoro, TO-DO, chatbot (LLMs + RAG).
+            </div>
+            <div class="project-card project-restore">
+              <b><a href="https://github.com/arnesh2212/superresolution-lensing" target="_blank">Super-Resolution for Gravitational Lensing</a></b><br>
+              GANs, SRResNet, Diffusion. AUROC: 0.9978, SSIM: 0.94.
+            </div>
+            <div class="project-card project-restore">
+              <b>REDACT</b><br>
+              Secure data redaction tool for text, PDFs, images, videos. 99%+ accuracy. Finalist: Smart India Hackathon 2024.
+            </div>
+            <div class="project-card project-restore">
+              <b>Infinity Birds</b><br>
+              Procedural superhero game (LibGDX + Java). Inspired by Angry Birds, OOP design.
+            </div>
+            <div class="project-card project-restore">
+              <b><a href="https://github.com/ayushk-1801/Crop-Disease-Detection" target="_blank">Crop Buddy</a></b><br>
+              Real-time mobile CNN crop disease diagnosis. Lightweight for field use.
+            </div>
+            <div class="project-card project-restore">
+              <b><a href="https://github.com/arnesh2212/captcha-solver" target="_blank">Captcha Solver</a></b><br>
+              CRNN + attention. 96%+ accuracy. Top 5 at IIT Jodhpur ML Hackathon.
+            </div>
+
+
+          </div>
+        </section>
+      </section>
+      <section id="experience" class="tab-section" style="display:none;">
+        <section class="card">
+          <h2 style="font-size:1.45rem; font-weight:900;">Experience</h2>
+          <div class="projects-list" style="display:flex; flex-direction:column; gap:1.2rem;">
+            <div class="project-card project-restore exp-entry">
+              <div style="font-weight:800; font-size:1.13rem; color:#FFB300;">SBI Lab, IIITD <span style="font-weight:400; font-size:1rem; color:#fff;">| May 2025 - Present</span></div>
+              <div style="font-size:1.01rem; margin:0.2em 0 0.3em 0; color:#fff;">Research Intern &mdash; Delhi, IN</div>
+              <ul style="font-size:0.98rem; margin:0.2em 0 0.3em 1.2em; color:#fff;">
+                <li>Working on medical imaging of different modalities, focusing on 2D and 3D data.</li>
+                <li>Supervised by Professor Anubha Gupta.</li>
+              </ul>
+            </div>
+            <div class="project-card project-restore exp-entry">
+              <div style="font-weight:800; font-size:1.13rem; color:#FFB300;">Meta / Brown University <span style="font-weight:400; font-size:1rem; color:#fff;">| May 2025 - Present</span></div>
+              <div style="font-size:1.01rem; margin:0.2em 0 0.3em 0; color:#fff;">Research Collaborator &mdash; Remote</div>
+              <ul style="font-size:0.98rem; margin:0.2em 0 0.3em 1.2em; color:#fff;">
+                <li>Working on theoretical methods for self-supervised learning.</li>
+                <li>Supervised by Professor Randall Balestriero.</li>
+              </ul>
+            </div>
+            <div class="project-card project-restore exp-entry">
+              <div style="font-weight:800; font-size:1.13rem; color:#FFB300;">The University of California, San Diego <span style="font-weight:400; font-size:1rem;">| Feb 2025 - May 2025</span></div>
+              <div style="font-size:1.01rem; margin:0.2em 0 0.3em 0;">Research Intern &mdash; Remote</div>
+              <ul style="font-size:0.98rem; margin:0.2em 0 0.3em 1.2em;">
+                <li>Worked under Professor Pengtao Xie for developing large language models for DNA RNA interaction prediction.</li>
+                <li>Developed transformer based models for processing DNA/RNA sequences of 100,000+ length using multi-GPU batch handling.</li>
+              </ul>
+            </div>
+            <div class="project-card project-restore exp-entry">
+              <div style="font-weight:800; font-size:1.13rem;  color:#FFB300;">AI Institute, University of South Carolina <span style="font-weight:400; font-size:1rem;">| Oct 2024 - May 2025</span></div>
+              <div style="font-size:1.01rem; margin:0.2em 0 0.3em 0;">Research Intern &mdash; Remote</div>
+              <ul style="font-size:0.98rem; margin:0.2em 0 0.3em 1.2em;">
+                <li>Developed robust watermarking techniques for AI-generated video content under the supervision of Professor Amitava Das.</li>
+                <li>Experimented with advanced Video-to-Video and Text-to-Video models to explore resilient watermarking applications, working with metrics like SSIM and FVD score.</li>
+                <li>Skills: Deep Learning, Computer Vision</li>
+              </ul>
+            </div>
+            <div class="project-card project-restore exp-entry">
+              <div style="font-weight:800; font-size:1.13rem; color:#FFB300;">HMI Lab, IIITD <span style="font-weight:400; font-size:1rem;">| May 2024 - Oct 2024</span></div>
+              <div style="font-size:1.01rem; margin:0.2em 0 0.3em 0;">Research Intern &mdash; Delhi, IN</div>
+              <ul style="font-size:0.98rem; margin:0.2em 0 0.3em 1.2em;">
+                <li>Worked on a project under Professor Jainendra Shukla, implementing multimodal LLMs for real-time tasks like live commentary generation and video captioning.</li>
+                <li>Work accepted in IEEE Transactions on Multimedia.</li>
+                <li>Skills: Deep Learning, Computer Vision, Natural Language Processing</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="contact" class="tab-section" style="display:none;">
+        <section class="card contact-card" style="border-left: 5px solid #FFB300;">
+          <h2 style="font-size:1.45rem; font-weight:900; margin-bottom:1.1rem;">Contact</h2>
+          <div style="display:flex; flex-direction:column; gap:1.1rem;">
+            <div style="display:flex; align-items:center; gap:0.7em;">
+              <span style="font-size:1.3em;">📧</span>
+              <span style="font-weight:700; font-size:1.08em;">arnesh23129 [at] iiitd.ac.in</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.7em;">
+              <span style="font-size:1.3em;">📧</span>
+              <span style="font-weight:700; font-size:1.08em;">arneshbatra2212 [at] gmail.com</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.7em;">
+              <span style="font-size:1.3em;">📍</span>
+              <span style="font-size:1.08em;">Delhi, India</span>
+            </div>
+            <div class="social-links" style="margin-top:0.7em;">
+              <a href="https://github.com/arnesh2212" target="_blank">GitHub</a>
+              <a href="https://linkedin.com/in/arnesh-batra-9684a4211" target="_blank">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?user=bngVIAEAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-section').forEach(s => s.style.display = 'none');
+      document.getElementById(tab).style.display = '';
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector('.nav-link[href="#' + tab + '"]').classList.add('active');
+    }
+    // Default to home tab
+    showTab('home');
+  </script>
+</body>
+</html> 
