@@ -12,7 +12,10 @@
 <body>
   <header class="navbar">
     <nav>
-      <ul>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
         <li><a href="#home" class="nav-link active" onclick="showTab('home')">Home</a></li>
         <li><a href="#publications" class="nav-link" onclick="showTab('publications')">Publications</a></li>
         <li><a href="#projects" class="nav-link" onclick="showTab('projects')">Projects</a></li>
@@ -255,6 +258,9 @@
       document.getElementById(tab).style.display = '';
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
       document.querySelector('.nav-link[href="#' + tab + '"]').classList.add('active');
+    }
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
     }
     // Default to home tab if no hash is present
     if (!window.location.hash || !document.getElementById(window.location.hash.substring(1))) {
