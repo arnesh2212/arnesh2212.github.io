@@ -256,8 +256,17 @@
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
       document.querySelector('.nav-link[href="#' + tab + '"]').classList.add('active');
     }
-    // Default to home tab
-    showTab('home');
+    // Default to home tab if no hash is present
+    if (!window.location.hash || !document.getElementById(window.location.hash.substring(1))) {
+      showTab('home');
+      window.location.hash = '#home';
+    } else {
+      showTab(window.location.hash.substring(1));
+    }
+    window.addEventListener('hashchange', function() {
+      const tab = window.location.hash.substring(1);
+      if (document.getElementById(tab)) showTab(tab);
+    });
   </script>
 </body>
 </html> 
