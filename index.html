@@ -91,7 +91,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- top bar ---------- */
 .bar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
-.bar::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: linear-gradient(90deg, transparent, var(--red) 50%, transparent); opacity: .35; }
 .bar .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-family: var(--serif); font-size: 19px; font-weight: 500; white-space: nowrap; }
 .brand:hover { text-decoration: none; }
@@ -99,7 +98,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .nav { display: flex; gap: 20px; margin-left: auto; font-size: 13.5px; }
 .nav a { color: var(--ink-3); white-space: nowrap; padding: 17px 0; }
 .nav a:hover, .nav a.on { color: var(--ink); text-decoration: none; }
-.nav a.on { box-shadow: inset 0 -2px 0 var(--red); }
+.nav a.on { box-shadow: inset 0 -1px 0 var(--ink); }
 .theme-btn { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--rule); background: transparent; color: var(--ink-2); cursor: pointer; display: grid; place-items: center; }
 .theme-btn:hover { color: var(--red); border-color: var(--red); }
 .theme-btn svg { width: 15px; height: 15px; }
@@ -151,7 +150,7 @@ h1 { font: 500 clamp(40px, 7vw, 60px)/1.05 var(--serif); letter-spacing: -.015em
 .links a:hover { color: var(--red); border-color: var(--red); text-decoration: none; }
 .links svg { width: 14px; height: 14px; flex: none; }
 
-.now { margin: 4px 0 0; padding: 18px 20px; border: 1px solid var(--rule); border-left: 3px solid var(--red); border-radius: 3px; font-size: 14.5px; color: var(--ink-2); background: var(--card); }
+.now { margin: 4px 0 0; padding: 18px 20px; border: 1px solid var(--rule); border-radius: 3px; font-size: 14.5px; color: var(--ink-2); background: var(--card); }
 .now h2 { all: unset; display: flex; align-items: center; gap: 8px; font: 500 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
 .now ul { margin: 0; padding-left: 18px; }
 .now li { margin: 3px 0; }
@@ -167,8 +166,7 @@ h1 { font: 500 clamp(40px, 7vw, 60px)/1.05 var(--serif); letter-spacing: -.015em
 /* ---------- sections ---------- */
 section { padding: 60px 0 8px; }
 .sec-head { position: relative; display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 10px; margin-bottom: 24px; }
-.sec-head::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 56px; height: 2px; background: var(--red); }
-.mk { font: 500 11px/1 var(--mono); letter-spacing: .06em; color: var(--red); white-space: nowrap; border: 1px solid currentColor; padding: 3px 5px; border-radius: 2px; transform: translateY(-4px); }
+.mk { font: 500 11px/1 var(--mono); letter-spacing: .06em; color: var(--red); white-space: nowrap; }
 .sec-head h2 { font: 500 28px/1.2 var(--serif); margin: 0; letter-spacing: -.01em; }
 .sec-head .aside { margin-left: auto; font-size: 12.5px; color: var(--ink-3); text-align: right; }
 .intro { color: var(--ink-2); max-width: 64ch; margin: -6px 0 20px; }
@@ -208,7 +206,7 @@ section { padding: 60px 0 8px; }
 .pub h3 a { color: var(--ink); }
 .pub h3 a:hover { color: var(--red); }
 .authors { font-size: 14px; color: var(--ink-2); margin-top: 3px; }
-.authors .me { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.authors .me { color: var(--ink); font-weight: 600; }
 .where { font-size: 13.5px; color: var(--ink-3); font-style: italic; margin-top: 1px; }
 .tldr { font-size: 14px; color: var(--ink-2); margin: 6px 0 0; }
 .plinks { display: flex; gap: 12px; margin-top: 6px; font: 500 12.5px/1 var(--mono); }
@@ -226,7 +224,7 @@ section { padding: 60px 0 8px; }
 .g-track { position: relative; flex: 1; height: 100%; }
 .g-bar { position: absolute; top: 7px; height: 8px; border-radius: 1px; background: var(--red); }
 .g-bar.industry { background: var(--ink-2); }
-.g-bar.lead { background: transparent; border: 1.5px solid var(--red); }
+.g-bar.lead { background: var(--ink-3); opacity: .6; }
 .g-bar.edu { background: var(--rule); }
 .g-row:hover .g-bar { filter: brightness(1.15); }
 .g-row:hover .g-label { color: var(--red); }
@@ -242,7 +240,7 @@ section { padding: 60px 0 8px; }
 .tl > li { position: relative; padding: 0 0 26px 34px; }
 .tl > li::before { content: ""; position: absolute; left: 1px; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 2px solid var(--red); box-sizing: border-box; }
 .tl > li[data-kind="industry"]::before { border-color: var(--ink-2); }
-.tl > li[data-kind="lead"]::before { border-color: var(--red); border-style: dotted; }
+.tl > li[data-kind="lead"]::before { border-color: var(--ink-3); }
 .tl > li[data-kind="edu"]::before { border-color: var(--ink-3); }
 .tl > li.current::before { background: var(--arc); border-color: var(--arc); box-shadow: 0 0 0 4px var(--arc-soft), var(--glow); }
 .tl .when { font: 500 12px/1 var(--mono); color: var(--ink-3); letter-spacing: .02em; }
@@ -264,7 +262,7 @@ section { padding: 60px 0 8px; }
 .cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
 .card { border: 1px solid var(--rule); border-radius: 3px; padding: 16px 18px; background: var(--card); transition: border-color .15s; }
-.card:hover { border-color: color-mix(in srgb, var(--red) 45%, var(--rule)); }
+.card:hover { border-color: var(--ink-3); }
 .card .yr { font: 500 11.5px/1 var(--mono); color: var(--ink-3); }
 .card h3 { font: 500 18px/1.3 var(--serif); margin: 6px 0 4px; }
 .card p { margin: 0; font-size: 14px; color: var(--ink-2); }
@@ -292,7 +290,7 @@ section { padding: 60px 0 8px; }
 .off p { margin: 0; font-size: 14px; color: var(--ink-2); }
 
 /* contact */
-.contact-box { border: 1px solid var(--rule); border-top: 3px solid var(--red); border-radius: 3px; padding: 24px; display: grid; grid-template-columns: 1fr; gap: 24px; background: var(--card); }
+.contact-box { border: 1px solid var(--rule); border-radius: 3px; padding: 24px; display: grid; grid-template-columns: 1fr; gap: 24px; background: var(--card); }
 @media (min-width: 680px) { .contact-box { grid-template-columns: 1.4fr 1fr; align-items: start; } }
 .contact-box h3 { font: 500 23px/1.3 var(--serif); margin: 0 0 8px; }
 .contact-box p { margin: 0 0 16px; color: var(--ink-2); font-size: 15px; }
@@ -580,7 +578,7 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
     <div class="sec-head"><span class="mk">MK·03</span><h2>Timeline</h2><span class="aside">research · industry · leadership · education</span></div>
 
     <div class="gantt" aria-hidden="true"><div class="gantt-inner" id="gantt"></div>
-      <div class="legend"><span><i style="background:var(--red)"></i>Research</span><span><i style="background:var(--ink-2)"></i>Industry</span><span><i style="border:1.5px solid var(--red)"></i>Leadership</span><span><i style="background:var(--rule)"></i>Education</span></div>
+      <div class="legend"><span><i style="background:var(--red)"></i>Research</span><span><i style="background:var(--ink-2)"></i>Industry</span><span><i style="background:var(--ink-3);opacity:.6"></i>Leadership</span><span><i style="background:var(--rule)"></i>Education</span></div>
     </div>
 
     <ol class="tl" id="tl">
@@ -697,7 +695,7 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
   <section id="starkvision">
     <div class="sec-head"><span class="mk">MK·04</span><h2>StarkVision</h2><span class="aside">founded 2025</span></div>
     <div class="stark">
-      <p>I started StarkVision, the research arm of NivionAI, so that undergraduates could do real research and publish it as first authors. It has 20+ members. I mentor them from the first question through experiment design, ablations, reproducibility and writing. The group runs on its own multi-GPU machines, funded through the Grand AI Challenge (NCIIPC / IndiaAI). Work from the group:</p>
+      <p>I started StarkVision, the research arm of NivionAI, so that undergraduates could do real research and publish it as first authors. It has 20+ members. I mentor them from the first question through experiment design, ablations, reproducibility and writing. Work from the group:</p>
       <ul class="stark-out">
         <li>Uncovering the Latent Potential of Deep Intermediate Representations<span class="v">ICML '26 Spotlight</span></li>
         <li>Catching AI-Generated Code at Scale<span class="v">EMNLP '26</span></li>
