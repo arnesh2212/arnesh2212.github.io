@@ -7,7 +7,7 @@
 <meta name="description" content="Arnesh Batra — undergraduate researcher at IIIT Delhi working on mechanistic interpretability, representation learning and AI safety. Publications at ICML (Spotlight), NeurIPS, EMNLP, TMLR, CVPR and INTERSPEECH.">
 <meta name="author" content="Arnesh Batra">
 <meta property="og:title" content="Arnesh Batra">
-<meta property="og:description" content="Mechanistic interpretability, representation learning and AI safety. IIIT Delhi · MARS V · StarkVision.">
+<meta property="og:description" content="Mechanistic interpretability, representation learning and AI safety. IIIT Delhi · SPAR · MARS V · StarkVision.">
 <meta property="og:url" content="https://arnesh.me/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://arnesh.me/">
@@ -157,11 +157,21 @@ h1 { font: 500 clamp(40px, 7vw, 60px)/1.05 var(--serif); letter-spacing: -.015em
 .lede em { color: var(--ink); font-style: italic; }
 .bio { color: var(--ink-2); max-width: 62ch; margin: 0 0 12px; }
 .bio b { color: var(--ink); font-weight: 600; }
-.hero-art { display: none; }
-@media (min-width: 760px) { .hero-art { display: block; } }
-.hero-art svg { width: 100%; height: auto; }
-:root[data-theme="dark"] .hero-art svg { filter: drop-shadow(0 0 22px rgba(127,220,255,.35)); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero-art svg { filter: drop-shadow(0 0 22px rgba(127,220,255,.35)); } }
+.avatar { position: relative; width: 132px; height: 132px; order: -1; }
+@media (min-width: 760px) { .avatar { width: 190px; height: 190px; order: 0; } }
+.avatar img { position: absolute; inset: 14%; width: 72%; height: 72%; border-radius: 50%; object-fit: cover; background: var(--bg-2); }
+.avatar svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.avatar .r1 { stroke: var(--red); }
+.avatar .r2 { stroke: var(--gold); }
+.avatar .tick { stroke: var(--ink-3); }
+.avatar .spin { transform-origin: 50px 50px; animation: spin 60s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .avatar .spin { animation: none; } }
+
+/* HUD corner brackets */
+.hud { position: relative; }
+.hud::before, .hud::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--gold); border-style: solid; pointer-events: none; }
+.hud::before { top: -1px; left: -1px; border-width: 1.5px 0 0 1.5px; }
+.hud::after { bottom: -1px; right: -1px; border-width: 0 1.5px 1.5px 0; }
 
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .links a {
@@ -174,19 +184,23 @@ h1 { font: 500 clamp(40px, 7vw, 60px)/1.05 var(--serif); letter-spacing: -.015em
 .links svg { width: 14px; height: 14px; flex: none; }
 
 .now {
-  margin: 8px 0 0; padding: 16px 18px; border: 1px solid var(--rule); border-left: 3px solid var(--red);
-  background: var(--bg-2); border-radius: 4px; font-size: 14.5px; color: var(--ink-2);
+  margin: 8px 0 0; padding: 16px 18px; border: 1px solid var(--rule);
+  border-radius: 2px; font-size: 14.5px; color: var(--ink-2);
 }
-.now h2 { all: unset; display: block; font: 500 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.now h2 { all: unset; display: block; font: 500 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
 .now ul { margin: 0; padding-left: 18px; }
 .now li { margin: 3px 0; }
-.now li::marker { color: var(--gold); }
-
-.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin: 28px 0 0; }
-@media (min-width: 640px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-.stat { background: var(--bg); padding: 14px 16px; }
-.stat b { display: block; font: 500 26px/1.1 var(--serif); color: var(--ink); }
-.stat span { font-size: 12.5px; color: var(--ink-3); }
+.now li::marker { color: var(--red); }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.cta p { margin: 0; flex: 1 1 260px; color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 2px;
+  background: var(--red); color: #fff; font-size: 14px; font-weight: 500;
+}
+.btn:hover { text-decoration: none; filter: brightness(1.08); }
+.btn svg { width: 15px; height: 15px; }
+:root[data-theme="dark"] .btn { color: #0c1015; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #0c1015; } }
 
 /* ---------- sections ---------- */
 section { padding: 56px 0 8px; }
@@ -196,14 +210,14 @@ section { padding: 56px 0 8px; }
 .sec-head .aside { margin-left: auto; font-size: 12.5px; color: var(--ink-3); text-align: right; }
 .intro { color: var(--ink-2); max-width: 64ch; margin: -6px 0 22px; }
 
-/* research threads */
-.threads { display: grid; grid-template-columns: 1fr; gap: 14px; }
-@media (min-width: 640px) { .threads { grid-template-columns: 1fr 1fr; } }
-.thread { padding: 18px; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg); position: relative; }
-.thread .n { font: 500 11px/1 var(--mono); color: var(--gold); letter-spacing: .08em; }
-.thread h3 { font: 500 19px/1.3 var(--serif); margin: 8px 0 6px; }
-.thread p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
-.thread .refs { margin-top: 10px; font: 400 11.5px/1.5 var(--mono); color: var(--ink-3); }
+/* research questions */
+.qs { list-style: none; margin: 0; padding: 0; counter-reset: q; }
+.qs li { display: grid; grid-template-columns: 34px 1fr; padding: 14px 0; border-top: 1px solid var(--rule); counter-increment: q; }
+.qs li:first-child { border-top: 0; padding-top: 0; }
+.qs li::before { content: "0" counter(q); font: 500 12px/1.9 var(--mono); color: var(--red); }
+.qs h3 { font: 500 18px/1.35 var(--serif); margin: 0 0 3px; }
+.qs p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.qs .refs { margin-top: 5px; font: 400 11.5px/1.5 var(--mono); color: var(--ink-3); }
 
 /* publications */
 .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: -4px 0 18px; }
@@ -220,16 +234,18 @@ section { padding: 56px 0 8px; }
 .pub:first-child { border-top: 0; }
 @media (min-width: 640px) { .pub { grid-template-columns: 150px 1fr; } }
 .venue { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 6px; }
-.tag { font: 500 11.5px/1 var(--mono); padding: 5px 7px; border-radius: 3px; white-space: nowrap; }
-.tag.conf { background: var(--red-soft); color: var(--red); }
-.tag.jour { background: var(--gold-soft); color: var(--gold); }
-.tag.work { background: var(--bg-2); color: var(--ink-2); border: 1px solid var(--rule); padding: 4px 6px; }
-.tag.star { background: var(--arc-soft); color: var(--arc); }
+.tag { font: 500 12px/1.3 var(--mono); white-space: nowrap; color: var(--ink-2); }
+.tag.conf { color: var(--red); }
+.tag.jour { color: var(--gold); }
+.tag.work { color: var(--ink-3); }
+.tag.star { color: var(--gold); }
+.tag.star::before { content: "★ "; }
+@media (min-width: 640px) { .venue { flex-direction: column; gap: 3px; } }
 .pub h3 { font: 500 18px/1.35 var(--serif); margin: 0; }
 .pub h3 a { color: var(--ink); }
 .pub h3 a:hover { color: var(--link); }
 .authors { font-size: 14px; color: var(--ink-2); margin-top: 3px; }
-.authors .me { color: var(--ink); font-weight: 600; box-shadow: inset 0 -.4em 0 var(--gold-soft); }
+.authors .me { color: var(--ink); font-weight: 600; }
 .where { font-size: 13.5px; color: var(--ink-3); font-style: italic; margin-top: 1px; }
 .tldr { font-size: 14px; color: var(--ink-2); margin: 6px 0 0; }
 .plinks { display: flex; gap: 12px; margin-top: 6px; font: 500 12.5px/1 var(--mono); }
@@ -279,19 +295,9 @@ section { padding: 56px 0 8px; }
 .tl ul li::marker { color: var(--ink-3); }
 
 /* starkvision */
-.stark { border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--bg); }
-.stark-top { padding: 22px; display: grid; gap: 18px; grid-template-columns: 1fr; border-bottom: 1px solid var(--rule); background:
-  radial-gradient(circle at 100% 0, var(--red-soft), transparent 55%), var(--bg); }
-@media (min-width: 640px) { .stark-top { grid-template-columns: 1fr auto; align-items: center; } }
-.stark-top h3 { font: 500 26px/1.2 var(--serif); margin: 0 0 6px; }
-.stark-top h3 span { color: var(--red); }
-.stark-top p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 58ch; }
-.stark-nums { display: flex; gap: 22px; }
-.stark-nums div b { display: block; font: 500 24px/1 var(--serif); }
-.stark-nums div span { font-size: 12px; color: var(--ink-3); }
-.stark-out { list-style: none; margin: 0; padding: 8px 22px 16px; font-size: 14.5px; }
-.stark-out li { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--rule); }
-.stark-out li:last-child { border-bottom: 0; }
+.stark p { color: var(--ink-2); max-width: 64ch; margin: -6px 0 14px; }
+.stark-out { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+.stark-out li { display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--rule); }
 .stark-out .v { margin-left: auto; font: 500 11.5px/1.6 var(--mono); color: var(--ink-3); white-space: nowrap; }
 
 /* cards: projects */
@@ -325,14 +331,21 @@ section { padding: 56px 0 8px; }
 .off h3 { font: 500 18px/1.2 var(--serif); margin: 0 0 6px; }
 .off p { margin: 0; font-size: 14px; color: var(--ink-2); }
 
+/* contact */
+.contact-box { border: 1px solid var(--rule); padding: 24px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 680px) { .contact-box { grid-template-columns: 1.4fr 1fr; align-items: start; } }
+.contact-box h3 { font: 500 22px/1.3 var(--serif); margin: 0 0 8px; }
+.contact-box p { margin: 0 0 14px; color: var(--ink-2); font-size: 15px; }
+.email { font: 500 15px/1.4 var(--mono); color: var(--ink); word-break: break-all; }
+.contact-list { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+.contact-list li { display: flex; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--rule); }
+.contact-list li:first-child { border-top: 0; }
+.contact-list svg { width: 15px; height: 15px; color: var(--ink-3); flex: none; }
+.contact-list span { margin-left: auto; font: 400 12px/1 var(--mono); color: var(--ink-3); }
+
 /* footer */
-footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48px; }
-.contact { display: grid; grid-template-columns: 1fr; gap: 20px; }
-@media (min-width: 640px) { .contact { grid-template-columns: 1.3fr 1fr; } }
-.contact h2 { font: 500 26px/1.25 var(--serif); margin: 0 0 8px; }
-.contact p { margin: 0; color: var(--ink-2); }
-.contact .links { margin-top: 0; align-content: flex-start; }
-.colophon { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; margin-top: 36px; font: 400 12px/1.5 var(--mono); color: var(--ink-3); }
+footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40px; }
+.colophon { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; font: 400 12px/1.5 var(--mono); color: var(--ink-3); }
 </style>
 </head>
 <body>
@@ -385,7 +398,7 @@ footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48
       <h1>Arnesh Batra</h1>
       <p class="lede">I study <em>what neural networks know</em>, where they keep it, and whether we can check.</p>
       <p class="bio">I'm a final-year B.Tech student in Computer Science &amp; AI at <b>IIIT Delhi</b>. I work on <b>mechanistic interpretability</b>, <b>representation learning</b> and <b>AI safety</b>: reading what is stored inside a model's layers, testing whether it is actually used, and building simple tools that catch models when they go wrong.</p>
-      <p class="bio">Right now I'm a research scholar at <b>MARS&nbsp;V</b> (Cambridge AI Safety Hub) with Yossi Gandelsman, studying whether LLMs can report on their own computation. Before this I worked with Randall Balestriero (Brown / Meta FAIR) and Anubha Gupta (SBI Lab). I also founded <b>StarkVision</b>, a student research group of 20+ people.</p>
+      <p class="bio">Right now I'm a research fellow at <b>SPAR</b> and a research scholar at <b>MARS&nbsp;V</b> (Cambridge AI Safety Hub) with Yossi Gandelsman, where I study whether LLMs can report on their own computation. Before this I worked with Randall Balestriero (Brown / Meta FAIR) and Anubha Gupta (SBI Lab). I also founded <b>StarkVision</b>, a student research group of 20+ people.</p>
       <div class="links">
         <a href="mailto:arnesh23129@iiitd.ac.in"><svg><use href="#i-mail"/></svg>Email</a>
         <a href="https://scholar.google.com/citations?user=bngVIAEAAAAJ&amp;hl=en"><svg><use href="#i-scholar"/></svg>Scholar</a>
@@ -395,65 +408,59 @@ footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48
         <a href="https://www.instagram.com/arnesh_photography_/"><svg><use href="#i-insta"/></svg>Photography</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg class="reactor" viewBox="0 0 100 100">      <circle class="ring-outer" cx="50" cy="50" r="46" fill="none" stroke-width="4"/>
-      <g class="spin">
-        <circle class="ring-gold" cx="50" cy="50" r="37" fill="none" stroke-width="2" stroke-dasharray="6 4.2"/>
-      </g>
-      <path class="tri" d="M50 24 L72.5 63 L27.5 63 Z" stroke-width="4" stroke-linejoin="round"/>
-      <circle class="core" cx="50" cy="50" r="10" stroke-width="2.5"/>
-      <circle class="core-dot" cx="50" cy="50" r="4.5"/>
-    </svg>
+    <div class="avatar">
+      <img src="avatar.jpg" alt="Arnesh Batra" width="460" height="460">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="r1" cx="50" cy="50" r="48" fill="none" stroke-width="1.6"/>
+        <g class="spin"><circle class="r2" cx="50" cy="50" r="44" fill="none" stroke-width="1.2" stroke-dasharray="4.6 2.3"/></g>
+        <g class="tick" stroke-width="1.2">
+          <line x1="50" y1="0" x2="50" y2="4"/><line x1="50" y1="96" x2="50" y2="100"/>
+          <line x1="0" y1="50" x2="4" y2="50"/><line x1="96" y1="50" x2="100" y2="50"/>
+        </g>
+      </svg>
     </div>
   </div>
 
-  <div class="now">
+  <div class="now hud">
     <h2>Now · Fall 2026</h2>
     <ul>
+      <li>Research fellow at SPAR.</li>
       <li>MARS V scholar: probing and steering LLMs for self-knowledge about their own behaviour.</li>
       <li>AI-safety research with Shiba AI on interpretability for agentic and multi-agent systems.</li>
-      <li>New: <i>What Do Audio Models Really Hear?</i> accepted at NeurIPS 2026.</li>
-      <li>Looking for PhD positions and research roles starting 2027. Happy to talk.</li>
+      <li><i>What Do Audio Models Really Hear?</i> accepted at NeurIPS 2026.</li>
     </ul>
-  </div>
-
-  <div class="stats" role="list">
-    <div class="stat" role="listitem"><b>12</b><span>papers &amp; workshop papers</span></div>
-    <div class="stat" role="listitem"><b>ICML</b><span>2026 Spotlight, first author</span></div>
-    <div class="stat" role="listitem"><b>$31K+</b><span>research grants &amp; prizes</span></div>
-    <div class="stat" role="listitem"><b>20+</b><span>students mentored at StarkVision</span></div>
+    <div class="cta">
+      <p><b>I'm looking for pre-doctoral and PhD positions</b> starting 2027. If you think we'd work well together, please email me.</p>
+      <a class="btn" href="mailto:arnesh23129@iiitd.ac.in"><svg><use href="#i-mail"/></svg>arnesh23129@iiitd.ac.in</a>
+    </div>
   </div>
 
   <!-- ================= RESEARCH ================= -->
   <section id="research">
     <div class="sec-head"><span class="mk">MK·01</span><h2>Research</h2></div>
-    <p class="intro">One question runs through most of my work: what does a model represent internally, and how much of that does it actually use? I approach it from four directions.</p>
-    <div class="threads">
-      <div class="thread">
-        <div class="n">I · INTERPRETABILITY &amp; SAFETY</div>
-        <h3>Looking inside the model</h3>
-        <p>Residual-stream analysis, probing, steering and causal interventions. Can an LLM know things about its own computation? Can we spot a jailbreak or a hallucination from the activations alone?</p>
-        <div class="refs">MARS V · Shiba AI · Whisper RSC (ICML-W '26)</div>
-      </div>
-      <div class="thread">
-        <div class="n">II · REPRESENTATIONS ACROSS DEPTH</div>
-        <h3>The last layer isn't always best</h3>
-        <p>Useful information rises and falls across depth. I measure where it lives, how it's shaped, and how to read it out from intermediate layers.</p>
-        <div class="refs">ICML '26 Spotlight · NeurIPS '26 · UniReps '25</div>
-      </div>
-      <div class="thread">
-        <div class="n">III · SELF-SUPERVISED &amp; WORLD MODELS</div>
-        <h3>Learning without labels</h3>
-        <p>JEPA-style predictive models for science, planning and markets. Contrastive learning, distillation and calibration for foundation models.</p>
-        <div class="refs">Lens-JEPA (GSoC) · DroidPlanner · TabPFN distillation</div>
-      </div>
-      <div class="thread">
-        <div class="n">IV · DETECTING SYNTHETIC CONTENT</div>
-        <h3>Telling real from generated</h3>
-        <p>Lightweight, interpretable detectors for AI-written code, AI-generated music and social-media deepfakes.</p>
-        <div class="refs">EMNLP '26 · TMLR · ICMR-W '25 · NeurIPS-W '25</div>
-      </div>
-    </div>
+    <p class="intro">The questions I'm working on right now.</p>
+    <ol class="qs">
+      <li><div>
+        <h3>Mechanistic interpretability: better tools, better interpretations</h3>
+        <p>Methods for finding what a model computes, and checks that what we read off the activations is actually what the model uses. Probing, steering, causal interventions and residual-stream analysis.</p>
+        <div class="refs">Shiba AI · Whisper RSC (ICML-W '26)</div>
+      </div></li>
+      <li><div>
+        <h3>Model psychology: introspection and chain of thought</h3>
+        <p>Can a model know things about its own computation? When does its chain of thought reflect what it is really doing, and when does it not?</p>
+        <div class="refs">MARS V · SPAR</div>
+      </div></li>
+      <li><div>
+        <h3>Representation learning and geometry</h3>
+        <p>How information is arranged across layers and how that shape relates to what a model can do. Self-supervised and JEPA-style objectives.</p>
+        <div class="refs">ICML '26 Spotlight · UniReps '25 · Lens-JEPA</div>
+      </div></li>
+      <li><div>
+        <h3>Interpretability beyond language models</h3>
+        <p>Applying the same tools to audio, vision and world models, and seeing what carries over.</p>
+        <div class="refs">NeurIPS '26 · Whisper RSC</div>
+      </div></li>
+    </ol>
   </section>
 
   <!-- ================= PUBLICATIONS ================= -->
@@ -612,6 +619,11 @@ footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48
     </div>
 
     <ol class="tl" id="tl">
+      <li data-kind="research" data-start="2026-09" data-label="SPAR" class="current">
+        <div class="when">Fall 2026 — now<span class="live">● active</span></div>
+        <h3>SPAR</h3>
+        <div class="role">Research Fellow <span class="loc">· Remote</span></div>
+      </li>
       <li data-kind="research" data-start="2026-07" data-label="MARS V" class="current">
         <div class="when">Jul 2026 — now<span class="live">● active</span></div>
         <h3>MARS V · Cambridge AI Safety Hub</h3>
@@ -720,24 +732,13 @@ footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48
   <section id="starkvision">
     <div class="sec-head"><span class="mk">MK·04</span><h2>StarkVision</h2><span class="aside">founded 2025</span></div>
     <div class="stark">
-      <div class="stark-top">
-        <div>
-          <h3>A student lab that <span>ships papers</span>.</h3>
-          <p>I started StarkVision (research arm of NivionAI) so that undergraduates could do real research and publish it as first authors. I mentor members from the first question through experiment design, ablations, reproducibility and writing. Every paper below was led by a student first author.</p>
-        </div>
-        <div class="stark-nums">
-          <div><b>20+</b><span>members</span></div>
-          <div><b>$31K+</b><span>funding</span></div>
-          <div><b>Multi-GPU</b><span>own cluster</span></div>
-        </div>
-      </div>
+      <p>I started StarkVision, the research arm of NivionAI, so that undergraduates could do real research and publish it as first authors. It has 20+ members. I mentor them from the first question through experiment design, ablations, reproducibility and writing. The group runs on its own multi-GPU machines, funded through the Grand AI Challenge (NCIIPC / IndiaAI). Work from the group:</p>
       <ul class="stark-out">
-        <li>Latent Potential of Deep Intermediate Representations<span class="v">ICML '26 Spotlight</span></li>
+        <li>Uncovering the Latent Potential of Deep Intermediate Representations<span class="v">ICML '26 Spotlight</span></li>
         <li>Catching AI-Generated Code at Scale<span class="v">EMNLP '26</span></li>
         <li>Melody or Machine<span class="v">TMLR</span></li>
         <li>M-SCAN<span class="v">CVPR '25 Demo</span></li>
         <li>CLAM · SocialDF<span class="v">NeurIPS-W '25 · ICMR-W '25</span></li>
-        <li>Funding from the Grand AI Challenge (NCIIPC / IndiaAI, Govt. of India)<span class="v">~$26K grant + $5K prize</span></li>
       </ul>
     </div>
   </section>
@@ -835,24 +836,29 @@ footer { margin-top: 64px; border-top: 1px solid var(--rule); padding: 36px 0 48
     </div>
   </section>
 
+  <section id="contact">
+    <div class="sec-head"><span class="mk">MK·09</span><h2>Contact</h2></div>
+    <div class="contact-box hud">
+      <div>
+        <h3>Looking for pre-doc and PhD opportunities</h3>
+        <p>I'm applying for pre-doctoral and PhD positions starting in 2027, and I'm always happy to talk about interpretability, introspection or representations. Email is the best way to reach me.</p>
+        <a class="btn" href="mailto:arnesh23129@iiitd.ac.in"><svg><use href="#i-mail"/></svg>Email me</a>
+        <p style="margin:12px 0 0"><span class="email">arnesh23129@iiitd.ac.in</span></p>
+      </div>
+      <ul class="contact-list">
+        <li><svg><use href="#i-scholar"/></svg><a href="https://scholar.google.com/citations?user=bngVIAEAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><svg><use href="#i-github"/></svg><a href="https://github.com/arnesh2212">GitHub</a><span>@arnesh2212</span></li>
+        <li><svg><use href="#i-linkedin"/></svg><a href="https://www.linkedin.com/in/arnesh-batra-9684a4211/">LinkedIn</a><span>arnesh-batra</span></li>
+        <li><svg><use href="#i-alphaxiv"/></svg><a href="https://www.alphaxiv.org/@arnesh-batra">alphaXiv</a><span>@arnesh-batra</span></li>
+        <li><svg><use href="#i-insta"/></svg><a href="https://www.instagram.com/arnesh_photography_/">Instagram</a><span>@arnesh_photography_</span></li>
+      </ul>
+    </div>
+  </section>
+
 </main>
 
-<footer id="contact">
+<footer>
   <div class="wrap">
-    <div class="contact">
-      <div>
-        <h2>Get in touch</h2>
-        <p>Open to research collaborations, PhD conversations and anything interpretability. Email is the fastest way: <a href="mailto:arnesh23129@iiitd.ac.in">arnesh23129@iiitd.ac.in</a></p>
-      </div>
-      <div class="links">
-        <a href="mailto:arnesh23129@iiitd.ac.in"><svg><use href="#i-mail"/></svg>Email</a>
-        <a href="https://scholar.google.com/citations?user=bngVIAEAAAAJ&amp;hl=en"><svg><use href="#i-scholar"/></svg>Scholar</a>
-        <a href="https://github.com/arnesh2212"><svg><use href="#i-github"/></svg>GitHub</a>
-        <a href="https://www.linkedin.com/in/arnesh-batra-9684a4211/"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
-        <a href="https://www.alphaxiv.org/@arnesh-batra"><svg><use href="#i-alphaxiv"/></svg>alphaXiv</a>
-        <a href="https://www.instagram.com/arnesh_photography_/"><svg><use href="#i-insta"/></svg>Instagram</a>
-      </div>
-    </div>
     <div class="colophon">
       <span>© 2026 Arnesh Batra · New Delhi</span>
       <span>Built in a cave, with a box of scraps.</span>
