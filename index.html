@@ -261,15 +261,16 @@ section { padding: 60px 0 8px; }
 /* projects */
 .cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
-.card { border: 1px solid var(--rule); border-radius: 3px; padding: 16px 18px; background: var(--card); transition: border-color .15s; }
+.card { border: 1px solid var(--rule); border-radius: 3px; padding: 16px 18px; background: var(--card); transition: border-color .15s; display: flex; flex-direction: column; }
 .card:hover { border-color: var(--ink-3); }
 .card .yr { font: 500 11.5px/1 var(--mono); color: var(--ink-3); }
 .card h3 { font: 500 18px/1.3 var(--serif); margin: 6px 0 4px; }
 .card p { margin: 0; font-size: 14px; color: var(--ink-2); }
-.card .kw { margin-top: 10px; font: 400 11.5px/1.5 var(--mono); color: var(--ink-3); }
+.card .kw { margin-top: auto; padding-top: 10px; font: 400 11.5px/1.5 var(--mono); color: var(--ink-3); }
 .card b.num { color: var(--ink); font-weight: 600; }
 
 /* lists */
+.sub-h { font: 500 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 30px 0 6px; }
 .rows { list-style: none; margin: 0; padding: 0; }
 .rows li { display: grid; grid-template-columns: 1fr; gap: 2px 18px; padding: 11px 0; border-top: 1px solid var(--rule); font-size: 15px; }
 .rows li:first-child { border-top: 0; }
@@ -365,7 +366,6 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
         <a href="https://github.com/arnesh2212"><svg><use href="#i-github"/></svg>GitHub</a>
         <a href="https://www.linkedin.com/in/arnesh-batra-9684a4211/"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
         <a href="https://www.alphaxiv.org/@arnesh-batra"><svg><use href="#i-alphaxiv"/></svg>alphaXiv</a>
-        <a href="https://www.instagram.com/arnesh_photography_/"><svg><use href="#i-insta"/></svg>Photography</a>
       </div>
     </div>
     <div class="avatar">
@@ -570,7 +570,6 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
         </li>
       </ul>
     </div>
-    <p class="note">Under review: a variance- and probability-calibrated distillation method for TabPFN v3 (AAAI 2027 submission, open-sourced in TabTune).</p>
   </section>
 
   <!-- ================= TIMELINE ================= -->
@@ -619,7 +618,7 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
         <h3>Lexsi Labs</h3>
         <div class="role">AI Engineering Intern <span class="loc">· Remote</span></div>
         <ul>
-          <li>Built a variance- and probability-calibrated distillation method that keeps <b>98% of TabPFN v3's performance</b> on TabArena. Submitted to AAAI 2027 and open-sourced in TabTune.</li>
+          <li>Built a variance- and probability-calibrated distillation method that keeps <b>98% of TabPFN v3's performance</b> on TabArena.</li>
           <li>Analysed how distillation changes internal representations and predictive uncertainty in tabular foundation models.</li>
         </ul>
       </li>
@@ -734,25 +733,13 @@ footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 20px 0 40
         <p>Weekly Indian-equity ranking with seven expert rankers plus macro, news and fundamentals agents. <b class="num">22.51%</b> cumulative return, <b class="num">Sharpe 1.45</b>, beat the Nifty 50 in 28 of 41 weeks.</p>
         <div class="kw">learning-to-rank · agents · quant</div>
       </div>
-      <div class="card">
-        <div class="yr">2024</div>
-        <h3>RE-DACT</h3>
-        <p>Transformer-based redaction for text, PDFs, images and video with 99%+ accuracy. <b class="num">2nd place</b> at the Smart India Hackathon 2024 grand finale.</p>
-        <div class="kw">NLP · vision · privacy</div>
-      </div>
-      <div class="card">
-        <div class="yr">2024</div>
-        <h3>Super-resolution for gravitational lensing</h3>
-        <p>GANs, SRResNet and diffusion-based denoising for lensing images. AUROC 0.9978, 98.3% accuracy, SSIM 0.94.</p>
-        <div class="kw">GANs · diffusion · astrophysics</div>
-      </div>
-      <div class="card">
-        <div class="yr">2024</div>
-        <h3>Focus Flow</h3>
-        <p>An adaptive learning platform for neurodiverse students, with real-time attention tracking using MediaPipe and OpenCV.</p>
-        <div class="kw">vision · edtech</div>
-      </div>
     </div>
+    <h3 class="sub-h">Earlier</h3>
+    <ul class="rows">
+      <li><div>RE-DACT<span class="sub">Transformer-based redaction for text, PDFs, images and video, 99%+ accuracy. 2nd place at Smart India Hackathon 2024.</span></div><span class="r">2024</span></li>
+      <li><div>Super-resolution for gravitational lensing<span class="sub">GANs, SRResNet and diffusion denoising. AUROC 0.9978, SSIM 0.94.</span></div><span class="r">2024</span></li>
+      <li><div>Focus Flow<span class="sub">Adaptive learning platform for neurodiverse students with real-time attention tracking.</span></div><span class="r">2024</span></li>
+    </ul>
   </section>
 
   <!-- ================= HONORS ================= -->
